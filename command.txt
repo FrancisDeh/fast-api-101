@@ -2,6 +2,8 @@ python3 -m venv myenv
 source myenv/bin/activate
 pip install —upgrade pip
 
+uvicorn index:app
+
 from random import randint, seed
 seed(10)  # Set random seed to make examples reproducible
 random_dictionary = {i: randint(1, 10) for i in range(5)}
