@@ -1,3 +1,43 @@
 python3 -m venv myenv
 source myenv/bin/activate
 pip install —upgrade pip
+
+from random import randint, seed
+seed(10)  # Set random seed to make examples reproducible
+random_dictionary = {i: randint(1, 10) for i in range(5)}
+print(random_dictionary)  # {0: 10, 1: 1, 2: 7, 3: 8, 4: 10}
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_generator = (number for number in numbers if number % 2 ==
+0)
+even = list(even_generator)
+even_bis = list(even_generator)
+print(even)  # [2, 4, 6, 8, 10]
+print(even_bis)  # [] - generators can only be used once
+
+# say file name is index.py
+def hey(st: str) -> str:
+    return f"hello {st}"
+
+mypy index.py
+
+from typing import List, Union
+l: List[Union[int, float]] = [1, 2.5, 3.14, 5]
+
+from typing import Optional
+def greeting(name: Optional[str] = None) -> str:
+return f"Hello, {name if name else 'Anonymous'}"
+
+from typing import Callable, List
+ConditionFunction = Callable[[int], bool]
+def filter_list(l: List[int], condition: ConditionFunction) -> List[int]:
+    return [i for i in l if condition(i)]
+
+def is_even(i: int) -> bool:
+    return i % 2 == 0
+filter_list([1, 2, 3, 4, 5], is_even)
+Callable[..., bool]
+
+from typing import Any
+def f(x: Any) -> Any:
+    return x
