@@ -43,3 +43,19 @@ Callable[..., bool]
 from typing import Any
 def f(x: Any) -> Any:
     return x
+
+
+Large project structure
+.
+└── chapter3_project/
+├── models/
+│   ├── __init__.py
+│ ├── post.py
+│ └── user.py
+├── routers/
+│   ├── __init__.py
+│   ├── posts.py
+│   └── users.py
+├── __init__.py
+├── app.py
+└── db.py
