@@ -59,3 +59,5 @@ Large project structure
 ├── __init__.py
 ├── app.py
 └── db.py
+
+pip install 'databases[sqlite]'
